@@ -13,7 +13,10 @@ export function paneTitle(p) {
   if (p.mod) return p.title || p.mod;
   const prog = p.program;
   const where = tilde(p.cwd, home());
-  const name = prog && !prog.shell ? prog.name : (p.title ?? "").trim() || prog?.name || "Terminal";
+  // A shell's title is what its program set; a bare terminal address isn't one.
+  const t = (p.title ?? "").trim();
+  const said = t && t !== p.terminal && !(p.terminal ?? "").endsWith("/" + t);
+  const name = prog && !prog.shell ? prog.name : said ? t : prog?.name || "Terminal";
   return where ? `${name}  —  ${where}` : name;
 }
 
