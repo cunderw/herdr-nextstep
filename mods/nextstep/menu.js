@@ -109,8 +109,9 @@ export class MenuColumn {
             on: Boolean(it.sub) && open?.kind === it.sub && !open?.target,
             onDown: (e) => {
               if (!it.sub) return;
-              if (open?.kind === it.sub && !open?.target) {
-                closeOverlay(open.id);
+              const now = openSub();
+              if (now?.kind === it.sub && !now?.target) {
+                closeOverlay(now.id);
                 setShared("nextstep.sub", null);
               } else openSubmenu(it.sub, e.bounds);
             },

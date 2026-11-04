@@ -55,12 +55,12 @@ Left to right, at zoom 1:
   - A miniwindow shows its tab, and right-clicking it opens its Tab submenu at the pointer.
   - In a title bar, a click focuses the pane, a double-click zooms it, miniaturize settles the tab, and close closes the pane.
 - **Menus**:
-  - A press on a ▸ item opens its submenu, and pressing it again closes the submenu. Opening another submenu closes the first.
+  - A press on a ▸ item opens its submenu. Opening another submenu closes the first.
   - Choosing a submenu item closes the submenu and runs the command. A press outside it or Escape closes it.
   - Plain items (Find, Commands, Hide, Quit) run on click.
   - Rename... and Close ask through Herdr's own dialogs.
 - Agent order: the Dock calls `setAgentOrder` with its agent tiles, so `agent.next` and `agent.prev` follow the Dock.
-- The clock redraws every 15 seconds. Nothing else uses a timer.
+- The clock redraws every minute. Nothing else uses a timer.
 
 ## Built from
 
@@ -97,9 +97,10 @@ Left to right, at zoom 1:
 - Window-drag blocks take every press. Every tile, cell and title-bar button stops propagation in `on_mouse_down("left")`, or a click drags the window instead.
 - Bevel lines are `1 / zoom` px, so they stay one device pixel at any zoom.
 - 64px tiles mean about 16 tiles fit in a 1100px window. More spaces and agents than that scroll, and the clock stays pinned at the bottom.
-- Helvetica isn't bundled, because its licence doesn't allow redistribution. macOS has it. Elsewhere the UI falls back to the system's sans serif.
+- Helvetica isn't bundled, because its licence doesn't allow redistribution. macOS has it. Elsewhere Herdr picks a fallback font. A Helvetica-like face with a licence that allows it (TeX Gyre Heros, Liberation Sans) could be bundled in `fonts/`.
 - NeXT's resize bar along a window's bottom isn't drawn: a pane gets only one header.
 - Miniaturize settles the tab. Settled tabs stay in the miniwindows, dimmed, and clicking one shows it again.
+- Pressing an open submenu's ▸ item again is meant to close it, but the popup's own outside-press dismissal runs first, and the order hasn't been checked live.
 - Key equivalents only show `cmd-<key>` bindings, as NeXT showed only Command keys.
 
 ## Done when

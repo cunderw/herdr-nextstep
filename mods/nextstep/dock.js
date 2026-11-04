@@ -21,8 +21,8 @@ function spaceStatus(s) {
 
 export default class Dock {
   init(_p, cx) {
-    // The clock is data, so a timer, and only as often as a minute changes.
-    cx.timer.every(15000, (cx) => cx.notify());
+    // The clock is data, so a timer, and only as often as the minute changes.
+    cx.timer.every(60000, (cx) => cx.notify());
   }
 
   clock() {

@@ -21,7 +21,7 @@ herdr-app do layout.switch --name nextstep
 
 `install.sh` copies the layout, its theme and the `nextstep` mod into `~/.config/herdr-app`, because a symlinked mod folder doesn't draw its icons. Run it again after pulling. `layout.switch` (`ctrl-shift-l` by default) cycles back to your own layout.
 
-The UI is set in Helvetica, which macOS ships. No fonts are bundled. Elsewhere the menus fall back to your system's sans serif. Terminals keep your own font from `settings.json`.
+The UI is set in Helvetica, which macOS ships. No fonts are bundled. Elsewhere Herdr picks a fallback font, so the menus won't look quite as NeXT. Terminals keep your own font from `settings.json`.
 
 ## What it touches
 
