@@ -1,0 +1,51 @@
+{
+  "id": "root",
+  "type": "row",
+  "resizable": false,
+  "children": [
+    {
+      "id": "workspace",
+      "type": "block",
+      "content": { "mod": "nextstep", "props": { "role": "menu" } },
+      "size": { "px": 148 },
+      "window_drag": true
+    },
+    {
+      "id": "main",
+      "type": "block",
+      "content": {
+        "tab": "active",
+        "pane": {
+          "header": {
+            "content": { "mod": "nextstep", "props": { "role": "window" } },
+            "reveal": "always",
+            "height": 22,
+            "position": "top"
+          },
+          "background": "#1d1d1f",
+          "border": { "width": 1, "color": "#000000" },
+          "focus": { "width": 1, "color": "#000000" },
+          "radius": 0,
+          "gap": 10,
+          "lone": true
+        }
+      },
+      "padding": [10, 8]
+    },
+    {
+      "id": "dock",
+      "type": "block",
+      "content": { "mod": "nextstep", "props": { "role": "dock" } },
+      "size": { "px": 64 },
+      "window_drag": true
+    }
+  ],
+  "background": "#4a4e5a",
+  "theme": "nextstep",
+  "ui_font": "Helvetica",
+  "terminal_padding": [6, 4],
+  "terminal_opacity": 1,
+  "titlebar": "none",
+  "traffic_lights": [14, 10],
+  "preview": "layouts/nextstep.png"
+}
