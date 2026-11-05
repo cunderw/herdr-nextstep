@@ -2,6 +2,8 @@
 
 A NeXTSTEP desktop for the [Herdr](https://herdr.dev) desktop app: the menu at the top left, the Dock down the right edge, and your panes as windows with black title bars.
 
+![NeXTSTEP in Herdr, in motion](demo.gif)
+
 ![NeXTSTEP in Herdr](preview.png)
 
 - **The menu** holds Herdr's commands. Info, Space, Tab, Pane, Agents and Layouts open submenus beside it, and your Cmd shortcuts show as key equivalents.
